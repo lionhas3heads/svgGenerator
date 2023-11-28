@@ -1,0 +1,19 @@
+{
+  "name": "svggenerator",
+  "version": "1.0.0",
+  "description": "svg logo generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquire": "^0.4.8",
+    "inquirer": "^8.2.6"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

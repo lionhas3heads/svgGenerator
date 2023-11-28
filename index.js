@@ -1,11 +1,11 @@
-const inquire = require('require');
+const inquirer = require('inquirer');
 const fs = require('fs');
 
 const { Triangle, Circle, Square } = require('./lib/shapes');
 
 const questions = [
     {
-        type: 'input',
+        type: 'list',
         message: 'What shape would you like your logo to be?',
         name: 'userShape',
         choices: ['Triangle', 'Circle', 'Square'],
@@ -54,7 +54,7 @@ inquirer.prompt(questions).then(answers => {
     if (answers.userShape === 'Square') {
         return new Square(answers.userText, answers.userTextColor, answers.userShapeColor);
     }
-}).then(shape => { const svgRender = `epicasino — Today at 5:51 PM
+}).then(shape => { const svgRender = `
 <svg version="1.1"
      width="300" height="200"
      xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@ inquirer.prompt(questions).then(answers => {
 
 </svg>`;
 
-fs.writeFile('./lib/svg/${shape.text}.svg', svgRender, (err) =>
+fs.writeFile(`./lib/svg/${shape.text}.svg`, svgRender, (err) =>
 {if (err) {
     console.log(error);
     } else console.log(`Generated ${shape.text}.svg`);
